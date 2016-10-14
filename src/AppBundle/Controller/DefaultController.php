@@ -47,7 +47,7 @@ class DefaultController extends Controller
     {
         $Image = new Image();
         $Image->setName('mem');
-        $Image->setPath('images\mem.jpg');
+        $Image->setPath('ImageService/images/mem.jpg');
         $Image->setDate('13.10.2016');
 
         $em = $this->getDoctrine()->getManager();
