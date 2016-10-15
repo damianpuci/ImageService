@@ -15,30 +15,33 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('default/index.html.twig', [
+        return $this->render('base.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
 
+
+
     /**
-     * @Route("/add_user", name="adding_user_row")
+     * @Route("/display_image", name="displaying image")
      */
-    public function createAction()
+    public function showAction()
     {
-        $User = new User();
-        $User->setEmail('jas@o2.pl');
-        $User->setPassword('1234');
+        $user = $this->getDoctrine()
+            ->getRepository('AppBundle:User')
+            ->find(1);
 
-        $em = $this->getDoctrine()->getManager();
+        if (!$user) {
+            throw $this->createNotFoundException(
+                'No product found'
+            );
+        }
 
-        // tells Doctrine you want to (eventually) save the Product (no queries yet)
-        $em->persist($User);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $em->flush();
-
-        return new Response('Saved new product with id '.$User->getId());
+        return $this->render('image.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
     }
+
 
     /**
      * @Route("/add_image", name="adding_image_row")
@@ -62,22 +65,22 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/display_image", name="displaying image")
+     * @Route("/add_user", name="adding_user_row")
      */
-    public function showAction()
+    public function createDefaultUserAction()
     {
-        $user = $this->getDoctrine()
-            ->getRepository('AppBundle:User')
-            ->find(1);
+        $User = new User();
+        $User->setEmail('jas@o2.pl');
+        $User->setPassword('1234');
 
-        if (!$user) {
-            throw $this->createNotFoundException(
-                'No product found'
-            );
-        }
+        $em = $this->getDoctrine()->getManager();
 
-        return $this->render('image.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
+        // tells Doctrine you want to (eventually) save the Product (no queries yet)
+        $em->persist($User);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+        return new Response('Saved new product with id '.$User->getId());
     }
 }
