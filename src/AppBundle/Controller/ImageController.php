@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class ImageControllerController extends Controller
+class ImageController extends Controller
 {
     /**
      * @Route("/ShowDefaultImage")

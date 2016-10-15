@@ -25,7 +25,7 @@ class DefaultController extends Controller
     /**
      * @Route("/display_image", name="displaying image")
      */
-    public function showAction()
+   /* public function showAction()
     {
         $user = $this->getDoctrine()
             ->getRepository('AppBundle:User')
@@ -41,6 +41,7 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
+   */
 
 
     /**
@@ -50,15 +51,17 @@ class DefaultController extends Controller
     {
         $Image = new Image();
         $Image->setName('mem');
-        $Image->setPath('ImageService/images/mem.jpg');
+        $Image->setPath('images/mem.jpg');
         $Image->setDate('13.10.2016');
 
         $em = $this->getDoctrine()->getManager();
 
-        // tells Doctrine you want to (eventually) save the Product (no queries yet)
         $em->persist($Image);
 
-        // actually executes the queries (i.e. the INSERT query)
+        $Image->setName('mem2');
+        $Image->setPath('images/mem2.jpg');
+        $Image->setDate('14.10.2016');
+
         $em->flush();
 
         return new Response('Saved new product with id '.$Image->getId());
