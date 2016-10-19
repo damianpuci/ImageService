@@ -3,6 +3,20 @@
 {% block title %}AppBundle:ImageController:ShowDefaultImage{% endblock %}
 
 {% block body %}
-<h1>Welcome to the ImageController:ShowDefaultImage page</h1>
-    <img src="{{ asset('images/mem.jpg') }}"/>
+    {%  set pages=(images|length)/3+1 %}
+   <ul>
+    {% for p in range (1,pages) %}
+        {% set page = ('page' ~ p) %}
+        <li><a href="{{path('page', {'number': p}) }}">{{ p }}</a></li>
+    {% endfor %}
+    </ul>
+
+
+{#
+    {% for image in images %}
+<div align="center"> <img src="{{ asset(image.path) }}"/></div>
+    {% endfor %}
+#}
+
+
 {% endblock %}

@@ -23,48 +23,27 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/display_image", name="displaying image")
-     */
-   /* public function showAction()
-    {
-        $user = $this->getDoctrine()
-            ->getRepository('AppBundle:User')
-            ->find(1);
-
-        if (!$user) {
-            throw $this->createNotFoundException(
-                'No product found'
-            );
-        }
-
-        return $this->render('image.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
-    }
-   */
-
-
-    /**
      * @Route("/add_image", name="adding_image_row")
      */
     public function createImageAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
         $Image = new Image();
         $Image->setName('mem');
         $Image->setPath('images/mem.jpg');
-        $Image->setDate('13.10.2016');
+        $Image->setDate(new \DateTime("now"));
 
-        $em = $this->getDoctrine()->getManager();
+        $Image2 = new Image();
+        $Image2->setName('mem2');
+        $Image2->setPath('images/mem2.jpg');
+        $Image2->setDate(new \DateTime("now"));
 
         $em->persist($Image);
-
-        $Image->setName('mem2');
-        $Image->setPath('images/mem2.jpg');
-        $Image->setDate('14.10.2016');
-
+        $em->persist($Image2);
         $em->flush();
 
-        return new Response('Saved new product with id '.$Image->getId());
+        return new Response('Last image id: '.$Image2->getId());
     }
 
     /**

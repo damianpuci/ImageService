@@ -32,10 +32,10 @@ class Image
     /**
      * @ORM\Column(type="string", length=300)
      */
-    private $path;
+    public $path;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
@@ -103,7 +103,7 @@ class Image
     /**
      * Set date
      *
-     * @param string date
+     * @param datetime date
      *
      * @return Image
      */
