@@ -3,20 +3,61 @@
 {% block title %}AppBundle:ImageController:ShowDefaultImage{% endblock %}
 
 {% block body %}
-    {%  set pages=(images|length)/3+1 %}
-   <ul>
-    {% for p in range (1,pages) %}
-        {% set page = ('page' ~ p) %}
-        <li><a href="{{path('page', {'number': p}) }}">{{ p }}</a></li>
-    {% endfor %}
-    </ul>
+
+    <div id="menu">
+            <div align="center"><h1>ImageService</h1></div>
+            <div align="right">
+                <a href="{{path('registration')}}">Registration</a><br>
+                <a href="{{path('signup')}}">Sign Up</a><br>
+            </div>
+    </div>
+
+    <div id="images">
+        {% for image in images %}
+             <div align="center"> <img src="{{ asset(image.path) }}"/></div>
+        {% endfor %}
+    </div>
+
+    <div id="references", align="center">
+        {%  set pages=(images|length)/3+1 %}
+
+        {% for p in range (1,pages) %}
+            <a href="{{path('page', {'number': p}) }}">{{ p }}</a>
+        {% endfor %}
+    </div>
 
 
-{#
-    {% for image in images %}
-<div align="center"> <img src="{{ asset(image.path) }}"/></div>
-    {% endfor %}
-#}
+
+{% endblock %}
 
 
+{% block stylesheets %}
+    <style>
+        #menu{
+            background-color: #444444;
+        }
+
+        #references{
+            background-color: #444444;
+            color: lightskyblue;
+            text-decoration: none;
+            font-style: italic;
+        }
+
+        #images {
+            background-color: #868686;
+        }
+
+        h1{
+            color: lightskyblue;
+            font-style: italic;
+            font-size: 300%;
+        }
+
+        a{
+            color: lightskyblue;
+            text-decoration: none;
+            font-style: italic;
+        }
+    </style>
 {% endblock %}

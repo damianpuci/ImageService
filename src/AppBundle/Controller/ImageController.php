@@ -5,13 +5,14 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Image;
-use Symfony\Component\HttpFoundation\Response;
 
 class ImageController extends Controller
 {
+
     /**
      * @Route("/ShowDefaultImage")
      */
+    /*
     public function ShowDefaultImageAction()
     {
 
@@ -29,7 +30,7 @@ class ImageController extends Controller
             "images" => $images
         ));
     }
-
+*/
     /**
      * Matches /page*
      * @Route("/page{number}", defaults={"number" = 1}, name="page")
@@ -45,13 +46,14 @@ class ImageController extends Controller
         $images = $query->getResult();
 
 
+        $images2 = array();
 
 
-        for ($i=(($number-1)*10);$i<($number*10);$i++)
+        for ($i=(($number-1)*3);$i<($number*3);$i++)
         {
-            if($images[i]!=null)
+            if($images[$i]!=null)
             {
-                array_push($images2,$images[i]);
+                array_push($images2,$images[$i]);
             }
 
         }
