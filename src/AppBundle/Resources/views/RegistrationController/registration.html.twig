@@ -3,9 +3,12 @@
 {% block title %}AppBundle:RegistrationController:Registration{% endblock %}
 
 {% block body %}
-<h1>Welcome to the RegistrationController:Registration page</h1>
-   {# <ul>
-    <li><a href="{{path('registration')}}">Registration</a></li>
-    </ul>
-    #}
+    {{ form_start(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.plainPassword.first) }}
+    {{ form_row(form.plainPassword.second) }}
+
+    <button type="submit">Register!</button>
+    {{ form_end(form) }}
 {% endblock %}

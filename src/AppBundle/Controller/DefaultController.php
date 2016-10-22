@@ -23,7 +23,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/add_image", name="adding_image_row")
+     * @Route("/add_image", name="ImageAdding")
      */
     public function createImageAction()
     {
@@ -47,22 +47,21 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/add_user", name="adding_user_row")
+     * @Route("/add_user", name="UserAdding")
      */
     public function createDefaultUserAction()
     {
         $User = new User();
-        $User->setEmail('jas@o2.pl');
-        $User->setPassword('1234');
+        $User->setEmail('ja21s@o2.pl');
+        $User->setPassword('admin1');
+        $User->setUsername('admin1');
 
         $em = $this->getDoctrine()->getManager();
 
-        // tells Doctrine you want to (eventually) save the Product (no queries yet)
         $em->persist($User);
 
-        // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-        return new Response('Saved new product with id '.$User->getId());
+        return new Response('Saved new user with id '.$User->getId());
     }
 }
