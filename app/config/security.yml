@@ -21,10 +21,10 @@ security:
             security: false
 
         main:
-           # form_login:
-              #login_path: login
-             # check_path: login
-              #success_handler: redirect.after.login
+            form_login:
+              login_path: login
+              check_path: login
+              default_target_path: page
 
             #logout:
             #  path: /logout
