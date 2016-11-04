@@ -3,14 +3,43 @@
 {% block title %}AppBundle:ImageController:ShowDefaultImage{% endblock %}
 
 {% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+
+    <div id="form" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <form action="{{ path('page') }}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="_password" />
+
+            <button type="submit">login</button>
+        </form>
+    </div>
 
     <div id="menu">
             <div align="center"><h1>ImageService</h1></div>
             <div align="right">
                 <a href="{{path('registration')}}">Registration</a><br>
-                <a href="{{path('login')}}">Sign Up</a><br>
+                <span id="login" onclick="openNav()">Login</span>
             </div>
     </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("form").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("form").style.width = "0";
+        }
+    </script>
+
+
 
     <div id="images">
 
@@ -36,8 +65,11 @@
     <style>
         #menu{
             background-image: url({{ asset('images/background.png') }});
+        }
 
-
+        #login{
+            color: lightskyblue;
+            font-style: italic;
         }
 
         #references{
@@ -54,6 +86,8 @@
             height: auto;
         }
 
+
+
         h1{
             color: lightskyblue;
             font-style: italic;
@@ -65,5 +99,70 @@
             text-decoration: none;
             font-style: italic;
         }
+
+
+
+
+
+
+        #form{
+            font-family: Helvetica, SansSerif;
+            font-size: 20px;
+            color: lightskyblue;
+
+        }
+
+        #form:hover{
+            color: #818181;
+        }
+
+
+
+
+
+
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.5s;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s
+        }
+
+        .sidenav a:hover, .offcanvas a:focus{
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+
+
     </style>
 {% endblock %}

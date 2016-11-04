@@ -43,6 +43,16 @@ class ImageController extends Controller
             ->getQuery()
         ;
 
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+
+
         $images = $query->getResult();
 
 
@@ -64,7 +74,9 @@ class ImageController extends Controller
 
         return $this->render('AppBundle:ImageController:show_default_image.html.twig', array(
             'images' => $images,
-            'images2'=> $images2
+            'images2'=> $images2,
+            'last_username' => $lastUsername,
+            'error'         => $error,
         ));
     }
 

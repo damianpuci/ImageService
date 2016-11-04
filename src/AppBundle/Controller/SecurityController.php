@@ -7,9 +7,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class SecurityController extends Controller
 {
+
     /**
-     * @Route("/login", name="login")
+     * @Route("/page", name="login")
      */
+    /*
     public function loginAction()
     {
         $authenticationUtils = $this->get('security.authentication_utils');
@@ -25,5 +27,6 @@ class SecurityController extends Controller
             'error'         => $error,
         ));
     }
+    */
 
 }

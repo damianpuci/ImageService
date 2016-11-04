@@ -22,8 +22,8 @@ security:
 
         main:
             form_login:
-              login_path: login
-              check_path: login
+              login_path: page
+              check_path: page
               default_target_path: page
 
             #logout:
