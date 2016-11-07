@@ -10,28 +10,6 @@ class ImageController extends Controller
 {
 
     /**
-     * @Route("/ShowDefaultImage")
-     */
-    /*
-    public function ShowDefaultImageAction()
-    {
-
-        $em = $this->getDoctrine()->getRepository('AppBundle:Image');
-        $query = $em->createQueryBuilder('i')
-            ->orderBy('i.date', 'DESC')
-            ->getQuery()
-        ;
-
-        $images = $query->getResult();
-
-
-
-        return $this->render('AppBundle:ImageController:show_default_image.html.twig', array(
-            "images" => $images
-        ));
-    }
-*/
-    /**
      * Matches /page*
      * @Route("/page{number}", defaults={"number" = 1}, name="page")
      */

@@ -10,6 +10,7 @@
 
     <div id="form" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
         <form action="{{ path('page') }}" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" />
@@ -24,7 +25,7 @@
     <div id="menu">
             <div align="center"><h1>ImageService</h1></div>
             <div align="right">
-                <a href="{{path('registration')}}">Registration</a><br>
+                <h2 href="{{path('registration')}}">Registration</h2><br>
                 <span id="login" onclick="openNav()">Login</span>
             </div>
     </div>
@@ -77,16 +78,17 @@
             color: lightskyblue;
             text-decoration: none;
             font-style: italic;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            position: fixed;
         }
 
         #images {
             background-color: #555555;
-
             width: auto;
             height: auto;
         }
-
-
 
         h1{
             color: lightskyblue;
@@ -94,33 +96,44 @@
             font-size: 300%;
         }
 
+        h2{
+            color: lightskyblue;
+            font-style: italic;
+            display: inline;
+            height: auto;
+            width: auto;
+            font-size: 17px;
+            font-weight: normal;
+        }
+
         a{
             color: lightskyblue;
             text-decoration: none;
             font-style: italic;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 4px;
+            border: 1px solid #4c4c49;
+            border-radius: 4px;
+            background: #3c3c3a;
+            line-height: 30px;
+            transition: 5s;
         }
 
-
-
-
-
+        a:hover{
+            background: rgba(100, 195, 255, 0.41);
+        }
 
         #form{
             font-family: Helvetica, SansSerif;
             font-size: 20px;
             color: lightskyblue;
-
         }
 
         #form:hover{
             color: #818181;
         }
-
-
-
-
-
-
 
         .sidenav {
             height: 100%;
@@ -161,8 +174,6 @@
             .sidenav {padding-top: 15px;}
             .sidenav a {font-size: 18px;}
         }
-
-
 
     </style>
 {% endblock %}
