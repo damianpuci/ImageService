@@ -14,6 +14,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Entity\Image;
+
 
 
 /**
@@ -57,6 +60,7 @@ class User implements UserInterface, \Serializable
 
     public function __construct()
     {
+        $this->images = new ArrayCollection();
         $this->isActive = true;
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid(null, true));
@@ -207,4 +211,10 @@ class User implements UserInterface, \Serializable
     {
         $this->plainPassword = $password;
     }
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Image", mappedBy="user")
+     */
+    private $images;
 }

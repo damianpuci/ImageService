@@ -15,20 +15,18 @@ class ImageController extends Controller
      */
     public function DisplayPageAction($number)
     {
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+
         $em = $this->getDoctrine()->getRepository('AppBundle:Image');
         $query = $em->createQueryBuilder('i')
             ->orderBy('i.date', 'DESC')
             ->getQuery()
         ;
-
-        $authenticationUtils = $this->get('security.authentication_utils');
-
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-
 
 
         $images = $query->getResult();

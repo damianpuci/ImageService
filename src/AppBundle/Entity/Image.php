@@ -8,7 +8,9 @@
 
 namespace AppBundle\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Entity\User;
 
 /**
  * @ORM\Entity
@@ -123,6 +125,12 @@ class Image
     {
         return $this->date;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="images")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    public $user;
 
 
 }

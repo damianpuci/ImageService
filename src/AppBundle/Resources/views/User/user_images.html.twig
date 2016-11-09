@@ -1,77 +1,40 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}AppBundle:ImageController:ShowDefaultImage{% endblock %}
+{% block title %}AppBundle:User:UserImages{% endblock %}
 
 {% block body %}
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-
-    <div id="form" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-        <form action="{{ path('page') }}" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" />
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="_password" />
-            <button type="submit">login</button>
-        </form>
-    </div>
-
-
-    <div id="user_panel" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-        <a href="{{ path('user_images', {'last_username': last_username}) }}">Your images</a>
-    </div>
-
     <div id="menu">
-            <div align="center"><h1>ImageService</h1></div>
-            {% if last_username %}
-                <div align="left">
+        <div align="center"><h1>ImageService</h1></div>
+        {% if last_username %}
+            <div align="left">
                 <span id="user" onclick="openNav2()">{{ last_username }}</span>
-                </div>
-            {% endif %}
-            <div align="right">
-                <a href="{{ path('registration') }}">Registration</a><br>
-                <span id="login" onclick="openNav()">Login</span>
             </div>
+        {% endif %}
+        <div align="right">
+            <a href="{{ path('registration') }}">Registration</a><br>
+            <span id="login" onclick="openNav()">Login</span>
+        </div>
     </div>
-
-    <script>
-        function openNav() {
-            document.getElementById("form").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("form").style.width = "0";
-        }
-
-        function openNav2() {
-            document.getElementById("user_panel").style.width = "250px";
-        }
-
-        function closeNav2() {
-            document.getElementById("user_panel").style.width = "0";
-        }
-    </script>
-
-
-
     <div id="images">
 
         {% for image in images2 %}
-             <div align="center" > <img src="{{ asset(image.path) }}" width="500" height="300" /></div>
+            <div align="center" > <img src="{{ asset(image.path) }}" width="500" height="300" /></div>
         {% endfor %}
     </div>
 
     <div id="references", align="center">
         {%  set pages=((images|length)/10)+1 %}
 
-        {% for p in range (1,pages) %}
-            <a href="{{path('page', {'number': p}) }}">{{ p }}</a>
-        {% endfor %}
+        {% if pages >= 2 %}
+             {% for p in range (1,pages) %}
+                 <a href="{{path('user_images', {'number': p}) }}">{{ p }}</a>
+             {% endfor %}
+
+        {% else %}
+            <a href="{{path('user_images', {'number': 1}, {'last_user' : last_username}) }}">{{ 1 }}</a>
+
+        {% endif %}
+
     </div>
 
 

@@ -29,15 +29,20 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $el = $this->getDoctrine()->getRepository('AppBundle:User');
+        $user=$el->findOneById(2);
+
         $Image = new Image();
         $Image->setName('mem');
         $Image->setPath('images/mem.jpg');
         $Image->setDate(new \DateTime("now"));
+        $Image->user=$user;
 
         $Image2 = new Image();
         $Image2->setName('mem2');
         $Image2->setPath('images/mem2.jpg');
         $Image2->setDate(new \DateTime("now"));
+        $Image2->user=$user;
 
         $em->persist($Image);
         $em->persist($Image2);
