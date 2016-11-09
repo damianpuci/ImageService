@@ -25,6 +25,8 @@ class DefaultController extends Controller
     /**
      * @Route("/add_image", name="ImageAdding")
      */
+
+
     public function createImageAction()
     {
         $em = $this->getDoctrine()->getManager();
