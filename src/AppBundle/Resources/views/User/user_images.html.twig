@@ -11,8 +11,7 @@
             </div>
         {% endif %}
         <div align="right">
-            <a href="{{ path('registration') }}">Registration</a><br>
-            <span id="login" onclick="openNav()">Login</span>
+            <a href="{{ path('page') }}">Home</a>
         </div>
     </div>
     <div id="images">
@@ -35,6 +34,25 @@
 
         {% endif %}
 
+        <div id="user_panel" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+            <a href="{{ path('user_images', {'last_username': last_username}) }}">Your images</a>
+        </div>
+
+
+
+        <script>
+
+
+            function openNav2() {
+                document.getElementById("user_panel").style.width = "250px";
+            }
+
+            function closeNav2() {
+                document.getElementById("user_panel").style.width = "0";
+            }
+        </script>
+
     </div>
 
 
@@ -49,17 +67,20 @@
             color: lightskyblue;
         }
 
-        #login{
+        #user{
+            cursor:pointer;
             color: lightskyblue;
             font-style: italic;
             margin: 4px;
-            border: 1px solid #4c4c49;
+            border: 1px solid lightskyblue;
             border-radius: 4px;
             background: #3c3c3a;
             line-height: 30px;
             transition: 5s;
             text-decoration: none;
+            padding: 2px;
         }
+
 
         #references{
             background-image: url({{ asset('images/background.png') }});
@@ -100,26 +121,21 @@
             width: auto;
             height: auto;
             margin: 4px;
-            border: 1px solid #4c4c49;
+            border: 1px solid lightskyblue;
             border-radius: 4px;
             background: #3c3c3a;
             line-height: 30px;
             transition: 5s;
+            padding: 2px;
         }
 
         a:hover{
             background: rgba(100, 195, 255, 0.41);
         }
-
-        #form{
-            font-family: Helvetica, SansSerif;
-            font-size: 20px;
-            color: lightskyblue;
+        #user:hover{
+            background: rgba(100, 195, 255, 0.41);
         }
 
-        #form:hover{
-            color: #818181;
-        }
 
         #user_panel{
             font-family: Helvetica, SansSerif;
@@ -138,7 +154,7 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: rgba(4, 8, 28, 0.96);
+            background-color: rgba(51, 52, 52, 0.96);
             overflow-x: hidden;
             padding-top: 60px;
             transition: 0.5s;
@@ -148,7 +164,7 @@
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
-            color: #2f6681;
+            color: lightskyblue;
             display: block;
             transition: 0.3s
         }
