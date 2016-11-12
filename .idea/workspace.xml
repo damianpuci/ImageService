@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1660a91-8107-4422-a7d0-13f159814bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig" />
     </list>
     <ignored path="ImageService.iws" />
@@ -32,14 +32,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="show_default_image.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="show_default_image.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2176">
-              <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+            <state relative-caret-position="252">
+              <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
               <folding>
                 <element signature="e#353#360#0#HTML" expanded="true" />
-                <element signature="e#895#902#0#HTML" expanded="true" />
+                <element signature="e#939#946#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registration.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+            <state relative-caret-position="272">
+              <caret line="123" column="12" selection-start-line="123" selection-start-column="12" selection-end-line="123" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -184,8 +184,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/AddImage/add_image.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_images.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig" />
       </list>
     </option>
   </component>
@@ -744,12 +744,12 @@
       <workItem from="1478089736287" duration="10028000" />
       <workItem from="1478524691680" duration="20598000" />
       <workItem from="1478707449065" duration="7747000" />
-      <workItem from="1478772925697" duration="19692000" />
+      <workItem from="1478772925697" duration="20630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159536000" />
+    <option name="totallyTimeSpent" value="160474000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1132,17 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
-          <folding>
-            <element signature="e#353#360#0#HTML" expanded="true" />
-            <element signature="e#895#902#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/AddImage/add_image.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1155,9 +1144,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+        <state relative-caret-position="272">
+          <caret line="123" column="12" selection-start-line="123" selection-start-column="12" selection-end-line="123" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+          <folding>
+            <element signature="e#353#360#0#HTML" expanded="true" />
+            <element signature="e#939#946#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

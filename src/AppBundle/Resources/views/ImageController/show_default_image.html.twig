@@ -12,11 +12,11 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
         <form id="log" action="{{ path('page') }}" method="post">
-            <label for="username" >Username:</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" />
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="_password" />
-            <button type="submit">Login</button>
+            <label for="username" >Username:</label><br>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" /><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="_password" /><br><br>
+            <button id="submit_btn" type="submit">Login</button><br>
         </form>
     </div>
 
@@ -132,6 +132,24 @@
             cursor:pointer;
         }
 
+        #submit_btn{
+            color: lightskyblue;
+            font-size: 120%;
+            background-color: #3c3c3a;
+            border-color: #5eb5e0;
+        }
+
+        #password{
+            color: lightskyblue;
+            background-color: #3c3c3a;
+            border-color: #5eb5e0;
+        }
+
+        #username{
+            color: lightskyblue;
+            background-color: #3c3c3a;
+            border-color: #5eb5e0;
+        }
 
         #user:hover{
             background: rgba(100, 195, 255, 0.41);
@@ -139,6 +157,10 @@
 
         #login:hover{
             background: rgba(100, 195, 255, 0.41);
+        }
+
+        #log{
+            margin-left: 5px;
         }
 
         h1{
@@ -182,7 +204,7 @@
         }
 
         #form:hover{
-            color: #818181;
+            color: lightskyblue;
         }
 
         #user_panel{
