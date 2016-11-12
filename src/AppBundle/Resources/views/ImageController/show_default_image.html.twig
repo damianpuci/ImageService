@@ -6,17 +6,17 @@
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-
+    {{ last_username }}
 
     <div id="form" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-        <form action="{{ path('page') }}" method="post">
-            <label for="username">Username:</label>
+        <form id="log" action="{{ path('page') }}" method="post">
+            <label for="username" >Username:</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" />
             <label for="password">Password:</label>
             <input type="password" id="password" name="_password" />
-            <button type="submit">login</button>
+            <button type="submit">Login</button>
         </form>
     </div>
 
@@ -24,12 +24,12 @@
     <div id="user_panel" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
         <a href="{{ path('user_images', {'last_username': last_username}) }}">Your images</a>
-        <a href="{{ path('add_image', {'last_username': last_username}) }}">Add image</a>
+        <a href="{{ path('add_image') }}">Add image</a>
     </div>
 
     <div id="menu">
             <div align="center"><h1>ImageService</h1></div>
-            {% if last_username %}
+           {% if last_username %}
                 <div align="left">
                 <span id="user" onclick="openNav2()">{{ last_username }}</span>
                 </div>

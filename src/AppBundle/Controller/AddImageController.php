@@ -12,18 +12,17 @@ use Symfony\Component\HttpFoundation\Request;
 class AddImageController extends Controller
 {
     /**
-     * @Route("/AddImage", defaults={"last_user"="admin"}, name="add_image")
+     * @Route("/AddImage", name="add_image")
      */
-    public function AddImageAction(Request $request, $last_user)
+    public function AddImageAction(Request $request)
     {
         $image=new Image();
-        $last_username=$last_user;
+
+        $last_username=$this->getUser()->getUsername();
 
         $User=$this->getDoctrine()
             ->getRepository('AppBundle:User')
             ->findOneBy( array('username' => $last_username));
-
-
 
 
 
@@ -32,23 +31,31 @@ class AddImageController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+
+
             $file = $image->getPath();
 
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
 
+
+
+
             // Move the file to the directory where brochures are stored
-           /* $file->move(
-                $this->getParameter('images'),
+            $file->move(
+                $this->getParameter('images_directory'),
                 $fileName
-            );*/
+            );
 
             // Update the 'brochure' property to store the PDF file name
             // instead of its contents
             $image->setName($fileName);
-            $image->setPath("images/{$fileName}");
-            $image->setDate(new \DateTime("now"));
-            $image->user=$User;
 
+            $image->setPath("images/{$fileName}");
+
+            $image->setDate(new \DateTime("now"));
+
+            $image->user=$User;
+            echo $User->getUsername();
             $em = $this->getDoctrine()->getManager();
 
             $em->persist($image);

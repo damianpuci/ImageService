@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Image;
+use Symfony\Bundle\SecurityBundle\Security\FirewallContext;
 
 class ImageController extends Controller
 {
@@ -19,7 +20,10 @@ class ImageController extends Controller
 
         $error = $authenticationUtils->getLastAuthenticationError();
 
-        $lastUsername = $authenticationUtils->getLastUsername();
+        $username = NULL;
+        if($this->getUser()) { // getUser() zwróci NULL jeżeli nikt nie jest zalogowany
+            $username = $this->getUser()->getUsername();
+        }
 
 
         $em = $this->getDoctrine()->getRepository('AppBundle:Image');
@@ -51,8 +55,8 @@ class ImageController extends Controller
         return $this->render('AppBundle:ImageController:show_default_image.html.twig', array(
             'images' => $images,
             'images2'=> $images2,
-            'last_username' => $lastUsername,
-            'error'         => $error,
+            'last_username' => $username,
+            'error'         => $error
         ));
     }
 
