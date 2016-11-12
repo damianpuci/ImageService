@@ -13,19 +13,19 @@ class UserController extends Controller
 {
     /**
      * Matches /UserImages*
-     * @Route("/UserImages{number}", defaults={"number" = 1, "last_user"=NULL}, name="user_images")
+     * @Route("/UserImages{number}", defaults={"number" = 1, "last_username"=NULL}, name="user_images")
      */
 
-    public function UserImagesAction(Request $request, $number, $last_user)
+    public function UserImagesAction(Request $request, $number, $last_username)
     {
 
-        if($request->get('last_username')!=NULL)
+        if($this->getUser()->getUsername()!=NULL)
         {
-            $last_username=$request->get('last_username');
+            $last_username=$this->getUser()->getUsername();
         }
         else
         {
-            $last_username=$last_user;
+            $last_username=$last_username;
         }
 
         $User=$this->getDoctrine()

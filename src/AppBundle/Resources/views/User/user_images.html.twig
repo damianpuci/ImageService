@@ -26,11 +26,11 @@
 
         {% if pages >= 2 %}
              {% for p in range (1,pages) %}
-                 <a href="{{path('user_images', {'number': p}) }}">{{ p }}</a>
+                 <a href="{{path('user_images', {'number': p}, {'last_username' : last_username}) }}">{{ p }}</a>
              {% endfor %}
 
         {% else %}
-            <a href="{{path('user_images', {'number': 1}, {'last_user' : last_username}) }}">{{ 1 }}</a>
+            <a href="{{path('user_images', {'number': 1}, {'last_username' : last_username}) }}">{{ 1 }}</a>
 
         {% endif %}
 
