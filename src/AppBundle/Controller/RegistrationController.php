@@ -16,6 +16,8 @@ class RegistrationController extends Controller
      */
     public function registerAction(Request $request)
     {
+
+        $last_username=$this->getUser()->getUsername();
         // 1) build the form
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -42,7 +44,9 @@ class RegistrationController extends Controller
 
         return $this->render(
             '@App/RegistrationController/registration.html.twig',
-            array('form' => $form->createView())
+            array('form' => $form->createView(),
+                'last_username'=>$last_username
+            )
         );
     }
 }

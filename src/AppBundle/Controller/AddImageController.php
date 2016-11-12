@@ -66,6 +66,7 @@ class AddImageController extends Controller
 
         return $this->render('@App/AddImage/add_image.html.twig', array(
             'form' => $form->createView(),
+            'last_username' => $last_username,
         ));
     }
 
