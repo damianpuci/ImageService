@@ -20,12 +20,12 @@
 
         <div id="images", align="center">
 
-            <div align="center">{{ form_start(form) }}</div><br>
-            <div align="center">{{ form_row(form.username) }}</div><br>
-            <div align="center">{{ form_row(form.email) }}</div><br>
-            <div align="center">{{ form_row(form.plainPassword.first) }}</div><br>
-            <div align="center">{{ form_row(form.plainPassword.second) }}</div><br>
-            <div align="center"> <button type="submit">Register!</button></div><br>
+            <div align="center" >{{ form_start(form) }}</div><br>
+            <div align="center" id="username">{{ form_row(form.username) }}</div><br>
+            <div align="center" id="email">{{ form_row(form.email) }}</div><br>
+            <div align="center" id="pwd">{{ form_row(form.plainPassword.first) }}</div><br>
+            <div align="center" id="p_pwd">{{ form_row(form.plainPassword.second) }}</div><br>
+            <div align="center"> <button type="submit" id="submit_btn">Register!</button></div><br>
             <div align="center"> {{ form_end(form) }}</div><br>
         </div>
 
@@ -44,6 +44,42 @@
             width: 100%;
             bottom: 30px;
         }
+
+
+
+        #username{
+            color: lightskyblue;
+            background-color: #3c3c3a;
+            border-color: #5eb5e0;
+        }
+        #email
+        {
+            color: lightskyblue;
+            background-color: #3c3c3a;
+            border-color: #5eb5e0;
+        }
+        #pwd{
+            color: lightskyblue;
+            background-color: #3c3c3a;
+            border-color: #5eb5e0;
+        }
+        #p_pwd{
+            color: lightskyblue;
+            background-color: #3c3c3a;
+            border-color: #5eb5e0;
+        }
+        #submit_btn{
+            color: lightskyblue;
+            font-size: 120%;
+            background-color: #3c3c3a;
+            border-color: #5eb5e0;
+        }
+
+       input{
+           color: lightskyblue;
+           background-color: #3c3c3a;
+           border-color: #5eb5e0;
+       }
 
 
         #images {
@@ -111,13 +147,7 @@
             color: #f1f1f1;
         }
 
-
-
-
-
-
         @media screen and (max-height: 450px) {
-
             .sidenav a {font-size: 18px;}
         }
 
