@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1660a91-8107-4422-a7d0-13f159814bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/DisplayImage/display_image.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/DisplayImage/display_image.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_images.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_images.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
     </list>
     <ignored path="ImageService.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,8 +100,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="C:\xampp\php\php.exe bin/console doctrine:generate:entity" />
-      <command text="C:\xampp\php\php.exe bin/console doctrine:schema:update --force" />
       <command text="php bin/console doctrine:generate:entities AppBundle/Entity/User" />
       <command text="php bin/console doctrine:schema:update --force" />
       <command text="C:\xampp\php/php.exe bin/console doctrine:schema:update --force" />
@@ -127,6 +123,8 @@
       <command text="s doctrine:database:create" />
       <command text="s doctrine:schema:update --force" />
       <command text="s generate:controller" />
+      <command text="s doctrine:schema:update" />
+      <command text="s doctrine:schema:update --force" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -153,8 +151,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ImageController.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
@@ -169,6 +165,9 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/DisplayImage/display_image.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Comment.php" />
       </list>
     </option>
   </component>
@@ -758,12 +757,12 @@
       <workItem from="1478524691680" duration="20598000" />
       <workItem from="1478707449065" duration="7747000" />
       <workItem from="1478772925697" duration="21372000" />
-      <workItem from="1478995176450" duration="5696000" />
+      <workItem from="1478995176450" duration="7805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166912000" />
+    <option name="totallyTimeSpent" value="169021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -836,14 +835,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SignUpController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1018,14 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1391">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Tests/Controller/AddImageControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1038,14 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="216" column="12" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1166,6 +1141,30 @@
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-309">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

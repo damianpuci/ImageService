@@ -217,4 +217,9 @@ class User implements UserInterface, \Serializable
      * @ORM\OneToMany(targetEntity="Image", mappedBy="user")
      */
     private $images;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
+     */
+    private $comments;
 }

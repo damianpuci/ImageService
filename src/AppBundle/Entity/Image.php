@@ -132,5 +132,10 @@ class Image
      */
     public $user;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="image")
+     */
+    private $comments;
+
 
 }
