@@ -63,7 +63,7 @@
     <div id="images">
 
         {% for image in images2 %}
-             <div align="center" > <img src="{{ asset(image.path) }}" width="500" height="300" /></div>
+             <div align="center" ><a href="{{path('display_image', {'id': image.id}) }}"><img src="{{ asset(image.path) }}" width="500" height="300" /></a></div>
         {% endfor %}
     </div>
 
@@ -181,6 +181,7 @@
         }
 
         h1{
+            margin-top: 0px;
             color: lightskyblue;
             font-style: italic;
             font-size: 300%;

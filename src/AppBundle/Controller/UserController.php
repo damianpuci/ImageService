@@ -42,8 +42,9 @@ class UserController extends Controller
 
 
         $images=$em->findBy(
-            array('user' => $id)
+           array('user' => $id)
         );
+
 
         $images2=array();
 

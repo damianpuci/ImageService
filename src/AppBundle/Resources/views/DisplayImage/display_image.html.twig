@@ -1,0 +1,7 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:DisplayImage:DisplayImage{% endblock %}
+
+{% block body %}
+   <div align="center"> <img src="{{ asset(image.path) }}" width="700" height="500" /></div>
+{% endblock %}
