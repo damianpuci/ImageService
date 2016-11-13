@@ -10,8 +10,8 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 /**
+ * @ORM\Entity
  * @ORM\Table(name="Comment")
- * @ORM\Entity(repositoryClass="AppBundle\Entity\CommentRepository")
  */
 class Comment
 {
@@ -28,6 +28,10 @@ class Comment
     private $content;
 
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $date;
 
     /**
     * @ORM\ManyToOne(targetEntity="User", inversedBy="comments")
@@ -40,4 +44,68 @@ class Comment
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
      */
     public $image;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+
+    /**
+     * Set date
+     *
+     * @param datetime date
+     *
+     * @return Image
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string content
+     *
+     * @return Image
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+
+
 }

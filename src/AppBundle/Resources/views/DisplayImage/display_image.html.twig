@@ -14,6 +14,25 @@
          <div align="right">
             <a href="{{ path('page') }}">Home</a>
          </div>
+
+          <div id="comments" align="center">
+              {% if comments !=NULL %}
+                  {% for comment in comments %}
+                      <div align="center" >{{  comment.getContent() }}</div>
+                  {% endfor %}
+              {% endif %}
+
+          </div>
+
+          {% if last_username %}
+
+                  <div align="center">{{ form_start(form) }}</div><br>
+                  <div align="center">{{ form_row(form.content) }}</div><br>
+                  <div align="center"><button type="submit">Add comment</button></div><br>
+                  {{ form_end(form) }}<br>
+
+          {% endif %}
+
       </div><br>
 
 

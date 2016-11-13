@@ -55,7 +55,7 @@ class AddImageController extends Controller
             $image->setDate(new \DateTime("now"));
 
             $image->user=$User;
-            echo $User->getUsername();
+
             $em = $this->getDoctrine()->getManager();
 
             $em->persist($image);
