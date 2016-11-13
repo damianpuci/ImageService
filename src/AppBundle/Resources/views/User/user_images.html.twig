@@ -5,58 +5,58 @@
 {% block body %}
 
     <div id="overlay">
-    <div id="menu">
-        <div align="center"><h1>ImageService</h1></div>
-        {% if last_username %}
-            <div align="left">
-                <span id="user" onclick="openNav2()">{{ last_username }}</span>
+        <div id="menu">
+            <div align="center"><h1>ImageService</h1></div>
+            {% if last_username %}
+                <div align="left">
+                    <span id="user" onclick="openNav2()">{{ last_username }}</span>
+                </div>
+            {% endif %}
+            <div align="right">
+                <a href="{{ path('page') }}">Home</a>
             </div>
-        {% endif %}
-        <div align="right">
-            <a href="{{ path('page') }}">Home</a>
         </div>
-    </div>
-    <div id="images">
+        <div id="images">
 
-        {% for image in images2 %}
-            <div align="center" > <a href="{{path('display_image', {'id': image.id}) }}"><img src="{{ asset(image.path) }}" width="500" height="300" /></a></div>
-        {% endfor %}
-    </div>
-
-    <div id="references", align="center">
-        {%  set pages=((images|length)/10)+1 %}
-
-        {% if pages >= 2 %}
-             {% for p in range (1,pages) %}
-                 <a href="{{path('user_images', {'number': p}, {'last_username' : last_username}) }}">{{ p }}</a>
-             {% endfor %}
-
-        {% else %}
-            <a href="{{path('user_images', {'number': 1}, {'last_username' : last_username}) }}">{{ 1 }}</a>
-
-        {% endif %}
-
-        <div id="user_panel" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-            <a href="{{ path('user_images', {'last_username': last_username}) }}">Your images</a>
-            <a href="{{ path('add_image') }}">Add image</a>
+            {% for image in images2 %}
+                <div align="center" > <a href="{{path('display_image', {'id': image.id}) }}"><img src="{{ asset(image.path) }}" width="500" height="300" /></a></div>
+            {% endfor %}
         </div>
 
+        <div id="references", align="center">
+            {%  set pages=((images|length)/10)+1 %}
+
+            {% if pages >= 2 %}
+                 {% for p in range (1,pages) %}
+                     <a href="{{path('user_images', {'number': p}, {'last_username' : last_username}) }}">{{ p }}</a>
+                 {% endfor %}
+
+            {% else %}
+                <a href="{{path('user_images', {'number': 1}, {'last_username' : last_username}) }}">{{ 1 }}</a>
+
+            {% endif %}
+
+            <div id="user_panel" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+                <a href="{{ path('user_images', {'last_username': last_username}) }}">Your images</a>
+                <a href="{{ path('add_image') }}">Add image</a>
+            </div>
 
 
-        <script>
+
+            <script>
 
 
-            function openNav2() {
-                document.getElementById("user_panel").style.width = "250px";
-            }
+                function openNav2() {
+                    document.getElementById("user_panel").style.width = "250px";
+                }
 
-            function closeNav2() {
-                document.getElementById("user_panel").style.width = "0";
-            }
-        </script>
+                function closeNav2() {
+                    document.getElementById("user_panel").style.width = "0";
+                }
+            </script>
 
-    </div>
+        </div>
 
     </div>
 

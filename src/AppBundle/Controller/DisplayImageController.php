@@ -18,8 +18,11 @@ class DisplayImageController extends Controller
         $image=$em->find($id);
 
 
+        $last_username=$this->getUser()->getUsername();
+
         return $this->render('AppBundle:DisplayImage:display_image.html.twig', array(
-            'image'=>$image
+            'image'=>$image,
+            'last_username'=>$last_username
         ));
     }
 
