@@ -64,7 +64,7 @@ class DisplayImageController extends Controller
         $form2->handleRequest($request);
 
 
-        if ($form2->isSubmitted() ) {
+        if ($form2->isSubmitted()) {
             $liking=new Liking();
 
             $image->likeImage();

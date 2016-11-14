@@ -26,7 +26,7 @@
       <div id="images" align="center">
          <div align="center"> <img src="{{ asset(image.path) }}" width="500" height="300" /></div>
           <div id="like">
-            <h1>{{ likings|length }}</h1>
+            <h3>{{ 'Likings: ' }}{{ likings|length }}</h3>
 
 
           </div>
@@ -37,9 +37,7 @@
                   {{ form_start(form2) }}
                   {{ form_row(form2.like) }}
                   <button type="submit">Like it!</button>
-
-
-              </div>
+              </div><br><br>
              {% endif %}
           {% endif %}
 
@@ -49,7 +47,7 @@
           <div id="comments" align="center">
               {% if comments !=NULL %}
                   {% for comment in comments %}
-                      <div align="center" >{{ comment.user.getUsername() }}{{  ': '  }}{{  comment.getContent() }}{{ '    (' }}{{ comment.getDate().format('Y.m.d')     }}{{ ' ' }}{{ comment.getDate().format('h:m') }}{{ ')' }}</div>
+                      <div align="center" ><h5>{{ comment.user.getUsername() }}{{  ': '  }}</h5><h4>{{  comment.getContent() }}{{ '    (' }}{{ comment.getDate().format('Y.m.d')     }}{{ ' ' }}{{ comment.getDate().format('h:m') }}{{ ')' }}</h4></div>
                   {% endfor %}
               {% endif %}
           </div><br><br>
@@ -57,12 +55,12 @@
 
 
           {% if last_username %}
+              <div id="form"></div>
                   {{ form_start(form) }}
                   {{ form_row(form.content) }}
                   <button type="submit">Add comment</button>
                   {{ form_end(form) }}
               </div>
-
           {% endif %}
 
 
@@ -142,15 +140,18 @@
          z-index:1000;
       }
 
+      #form{
+          padding-bottom: 15px;
+      }
+
        #comments
        {
+
            color:#222222;
            font-size:15px;
        }
 
-       #form{
-           padding-bottom: 20px;
-       }
+
 
       path{
          color: lightskyblue;
@@ -185,12 +186,38 @@
          font-size: 300%;
       }
 
+      h3{
+          background-color: #3c3c3a;
+          color: lightskyblue;
+          font-style: italic;
+          font-size: 300%;
+      }
+
       h2{
+          background-color: #3c3c3a;
          color: lightskyblue;
          font-style: italic;
          display: inline;
          font-size: 22px;
          font-weight: normal;
+      }
+
+      h4{
+          background-color: #3c3c3a;
+          color: black;
+          font-style: italic;
+          display: inline;
+          font-size: 18px;
+          font-weight: normal;
+      }
+
+      h5{
+          background-color: #3c3c3a;
+          color: lightskyblue;
+          font-style: italic;
+          display: inline;
+          font-size: 18px;
+          font-weight: normal;
       }
 
       a{

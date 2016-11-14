@@ -80,7 +80,7 @@ class Image
 
     public function likeImage()
     {
-        $this->likings++;
+        $this->number_of_likings++;
 
         return $this;
     }
