@@ -26,23 +26,25 @@
       <div id="images" align="center">
          <div align="center"> <img src="{{ asset(image.path) }}" width="500" height="300" /></div>
 
-          <h2>Comments:</h2><br>
+          <h2>Comments:</h2><br><br>
 
           <div id="comments" align="center">
               {% if comments !=NULL %}
                   {% for comment in comments %}
-                      <div align="center" >{{ comment.getDate().format('Y-m-d')     }}{{  ': '  }}{{  comment.getContent() }}</div><br>
+                      <div align="center" >{{ comment.user.getUsername() }}{{  ': '  }}{{  comment.getContent() }}{{ '    (' }}{{ comment.getDate().format('Y.m.d')     }}{{ ' ' }}{{ comment.getDate().format('h:m') }}{{ ')' }}</div>
                   {% endfor %}
               {% endif %}
-          </div><br><br><br>
+          </div><br><br>
 
 
 
           {% if last_username %}
-              {{ form_start(form) }}
-              {{ form_row(form.content) }}
-              <button type="submit">Add comment</button>
-              {{ form_end(form) }}
+              <div id="form">
+                  {{ form_start(form) }}
+                  {{ form_row(form.content) }}
+                  <button type="submit">Add comment</button>
+                  {{ form_end(form) }}
+              </div>
 
           {% endif %}
 
@@ -126,8 +128,12 @@
        #comments
        {
            color:#222222;
+           font-size:15px;
        }
 
+       #form{
+           padding-bottom: 20px;
+       }
 
       path{
          color: lightskyblue;
@@ -166,7 +172,7 @@
          color: lightskyblue;
          font-style: italic;
          display: inline;
-         font-size: 21px;
+         font-size: 22px;
          font-weight: normal;
       }
 
