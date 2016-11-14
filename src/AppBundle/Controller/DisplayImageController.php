@@ -41,6 +41,16 @@ class DisplayImageController extends Controller
 
         $em = $this->getDoctrine()->getRepository('AppBundle:Comment');
 
+        $is_liked=false;
+
+        for($i=0;$i<count($likings);$i++)
+        {
+            if($likings[$i]->user==$User)
+            {
+                $is_liked=true;
+            }
+        }
+
         if($em->findBy(array('image' => $image)))
         {
             $comments = $em->findBy(array('image' => $image));
@@ -101,7 +111,8 @@ class DisplayImageController extends Controller
             'comments'=>$comments,
             'form' => $form->createView(),
             'form2' =>$form2->createView(),
-            'likings'=>$likings
+            'likings'=>$likings,
+            'is_liked'=>$is_liked
         ));
     }
 

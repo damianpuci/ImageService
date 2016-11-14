@@ -32,6 +32,7 @@
           </div>
 
           {% if last_username %}
+          {% if is_liked==false %}
               <div id="like">
                   {{ form_start(form2) }}
                   {{ form_row(form2.like) }}
@@ -39,7 +40,7 @@
 
 
               </div>
-
+             {% endif %}
           {% endif %}
 
 
@@ -56,7 +57,6 @@
 
 
           {% if last_username %}
-              <div id="form">
                   {{ form_start(form) }}
                   {{ form_row(form.content) }}
                   <button type="submit">Add comment</button>
@@ -65,7 +65,7 @@
 
           {% endif %}
 
-      </div>
+
 
 
 
