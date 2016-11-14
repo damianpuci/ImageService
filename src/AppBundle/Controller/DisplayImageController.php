@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Liking;
+use AppBundle\Form\ImageLiking;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Image;
@@ -27,11 +29,17 @@ class DisplayImageController extends Controller
             ->getRepository('AppBundle:User')
             ->findOneBy( array('username' => $last_username));
 
-        $em = $this->getDoctrine()->getRepository('AppBundle:Comment');
+
 
         $comments=NULL;
 
         $comment=new Comment();
+
+
+        $em = $this->getDoctrine()->getRepository('AppBundle:Liking');
+        $likings = $em->findBy(array('image' => $image));
+
+        $em = $this->getDoctrine()->getRepository('AppBundle:Comment');
 
         if($em->findBy(array('image' => $image)))
         {
@@ -42,7 +50,30 @@ class DisplayImageController extends Controller
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        $form2 = $this->createForm(ImageLiking::class);
+        $form2->handleRequest($request);
+
+
+        if ($form2->isSubmitted() ) {
+            $liking=new Liking();
+
+            $image->likeImage();
+
+            $liking->user=$User;
+            $liking->image=$image;
+
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($liking);
+            $em->persist($image);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('page'));
+
+
+        }
+
+        if ($form->isSubmitted() ) {
 
 
 
@@ -62,11 +93,15 @@ class DisplayImageController extends Controller
 
 
 
+
+
         return $this->render('AppBundle:DisplayImage:display_image.html.twig', array(
             'image'=>$image,
             'last_username'=>$last_username,
             'comments'=>$comments,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'form2' =>$form2->createView(),
+            'likings'=>$likings
         ));
     }
 

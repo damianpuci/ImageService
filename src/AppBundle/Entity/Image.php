@@ -41,6 +41,11 @@ class Image
      */
     private $date;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $number_of_likings;
+
 
     /**
      * Get id
@@ -62,6 +67,20 @@ class Image
     public function setPath($path)
     {
         $this->path = $path;
+
+        return $this;
+    }
+
+    public function __construct()
+    {
+        $this->number_of_likings =0;
+        // may not be needed, see section on salt below
+        // $this->salt = md5(uniqid(null, true));
+    }
+
+    public function likeImage()
+    {
+        $this->likings++;
 
         return $this;
     }
@@ -136,6 +155,11 @@ class Image
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="image")
      */
     private $comments;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Liking", mappedBy="image")
+     */
+    private $likings;
 
 
 }

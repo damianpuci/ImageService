@@ -25,6 +25,23 @@
 
       <div id="images" align="center">
          <div align="center"> <img src="{{ asset(image.path) }}" width="500" height="300" /></div>
+          <div id="like">
+            <h1>{{ likings|length }}</h1>
+
+
+          </div>
+
+          {% if last_username %}
+              <div id="like">
+                  {{ form_start(form2) }}
+                  {{ form_row(form2.like) }}
+                  <button type="submit">Like it!</button>
+
+
+              </div>
+
+          {% endif %}
+
 
           <h2>Comments:</h2><br><br>
 

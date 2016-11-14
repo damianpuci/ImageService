@@ -97,7 +97,7 @@ class Comment
      *
      * @param string content
      *
-     * @return Image
+     * @return Comment
      */
     public function setContent($content)
     {

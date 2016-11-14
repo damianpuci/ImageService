@@ -221,4 +221,9 @@ class User implements UserInterface, \Serializable
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
      */
     private $comments;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Liking", mappedBy="user")
+     */
+    private $likings;
 }
