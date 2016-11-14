@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Monolog\Handler\ElasticSearchHandler;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -23,10 +25,26 @@ class TopRatedController extends Controller
 
         $images=$query->getResult();
 
+        $images2=new ArrayCollection();
 
+        $number_of_iteration=NULL;
+
+        if(sizeof($images)>10)
+        {
+            $number_of_iteration=10;
+        }
+        else
+        {
+            $number_of_iteration=sizeof($images);
+        }
+
+        for($i=0;$i<$number_of_iteration;$i++)
+        {
+            $images2[$i]=$images[$i];
+        }
 
         return $this->render('AppBundle:TopRated:show_top_rated.html.twig', array(
-            'images' => $images,
+            'images' => $images2,
             'last_username' => $last_username
         ));
     }
