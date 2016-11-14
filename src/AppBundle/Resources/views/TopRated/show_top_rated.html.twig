@@ -10,7 +10,8 @@
             <div align="center"><h1>ImageService</h1></div>
             {% if last_username %}
                 <div align="left">
-                    <span id="user" onclick="openNav2()">{{ last_username }}</span>
+                    <span id="user" onclick="openNav2()">{{ last_username }}</span><br>
+
                 </div>
             {% endif %}
             <div align="right">
@@ -31,6 +32,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
                 <a href="{{ path('user_images', {'last_username': last_username}) }}">Your images</a>
                 <a href="{{ path('add_image') }}">Add image</a>
+                <a href ="/logout">Logout</a><br>
             </div>
 
 
