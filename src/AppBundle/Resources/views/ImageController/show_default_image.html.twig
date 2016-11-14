@@ -33,12 +33,16 @@
         {% endif %}
            {% if last_username %}
                 <div align="left">
-                <span id="user" onclick="openNav2()">{{ last_username }}</span>
+                <span id="user" onclick="openNav2()">{{ last_username }}</span><br>
+                    <a href ="/logout">Logout</a><br>
                 </div>
             {% endif %}
             <div align="right">
                 <a href="{{ path('registration') }}">Registration</a><br>
-                <span id="login" onclick="openNav()">Login</span><br>
+                {% if last_username == NULL %}
+                    <span id="login" onclick="openNav()">Login</span><br>
+                {% endif %}
+
                 <a href="{{ path('show_top_rated') }}">Top rated</a><br>
             </div>
     </div>

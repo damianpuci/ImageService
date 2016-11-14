@@ -26,10 +26,10 @@ security:
               check_path: page
               default_target_path: page
 
-            #logout:
-            #  path: /logout
-            #  target: /
-             # success_handler: redirect.after.logout
+            logout:
+              path: /logout
+              target: page
+
 
             pattern: ^/
             http_basic: ~
