@@ -16,9 +16,11 @@ class RegistrationController extends Controller
      */
     public function registerAction(Request $request)
     {
+        $last_username = NULL;
+        if($this->getUser()) {
+            $last_username = $this->getUser()->getUsername();
+        }
 
-        $last_username=$this->getUser()->getUsername();
-        // 1) build the form
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 

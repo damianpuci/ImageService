@@ -14,7 +14,10 @@ class TopRatedController extends Controller
      */
     public function ShowTopRatedAction()
     {
-        $last_username=$this->getUser()->getUsername();
+        $last_username = NULL;
+        if($this->getUser()) {
+            $last_username = $this->getUser()->getUsername();
+        }
 
         $em = $this->getDoctrine()->getRepository('AppBundle:Image');
 
