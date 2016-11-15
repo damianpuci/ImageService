@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1660a91-8107-4422-a7d0-13f159814bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TopRatedController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TopRatedController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php" />
     </list>
     <ignored path="ImageService.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TopRatedController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TopRatedController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TopRatedController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
@@ -107,15 +106,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DisplayImageController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DisplayImageController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="25" column="55" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="55" />
+            <state relative-caret-position="201">
+              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
-                <element signature="e#1070#1088#1#PHP" expanded="true" />
-                <element signature="e#1200#1219#1#PHP" expanded="true" />
+                <element signature="e#1148#1166#1#PHP" expanded="true" />
+                <element signature="e#1278#1297#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,7 +198,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/CommentType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Comment.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/DisplayImage/display_image.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig" />
@@ -211,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/TopRated/show_top_rated.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TopRatedController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php" />
       </list>
     </option>
   </component>
@@ -770,12 +769,12 @@
       <workItem from="1478524691680" duration="20598000" />
       <workItem from="1478707449065" duration="7747000" />
       <workItem from="1478772925697" duration="21372000" />
-      <workItem from="1478995176450" duration="36595000" />
+      <workItem from="1478995176450" duration="36813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197811000" />
+    <option name="totallyTimeSpent" value="198029000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1100,18 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="25" column="55" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="55" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-            <element signature="e#1070#1088#1#PHP" expanded="true" />
-            <element signature="e#1200#1219#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -1203,6 +1190,18 @@
           <folding>
             <element signature="e#40#88#0#PHP" expanded="true" />
             <element signature="e#598#615#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#1148#1166#1#PHP" expanded="true" />
+            <element signature="e#1278#1297#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -23,7 +23,10 @@ class DisplayImageController extends Controller
         $em = $this->getDoctrine()->getRepository('AppBundle:Image');
         $image=$em->find($id);
 
-        $last_username=$this->getUser()->getUsername();
+        $last_username = NULL;
+        if($this->getUser()) {
+            $last_username = $this->getUser()->getUsername();
+        }
 
         $User=$this->getDoctrine()
             ->getRepository('AppBundle:User')
