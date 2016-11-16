@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1660a91-8107-4422-a7d0-13f159814bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/AddImage/add_image.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/AddImage/add_image.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/DisplayImage/display_image.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/DisplayImage/display_image.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/TopRated/show_top_rated.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/TopRated/show_top_rated.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_images.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_images.html.twig" />
     </list>
     <ignored path="ImageService.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registration.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="277">
-              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#12#28#0#Twig" expanded="true" />
               </folding>
@@ -58,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_top_rated.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="show_top_rated.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/TopRated/show_top_rated.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2317">
-              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state relative-caret-position="243">
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -138,11 +134,11 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TopRatedController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DisplayImageController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/ImageController/show_default_image.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/TopRated/show_top_rated.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/AddImage/add_image.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/User/user_images.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/DisplayImage/display_image.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/TopRated/show_top_rated.html.twig" />
       </list>
     </option>
   </component>
@@ -704,12 +700,12 @@
       <workItem from="1478772925697" duration="21372000" />
       <workItem from="1478995176450" duration="38008000" />
       <workItem from="1479253251538" duration="1467000" />
-      <workItem from="1479255322034" duration="169000" />
+      <workItem from="1479255322034" duration="730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200860000" />
+    <option name="totallyTimeSpent" value="201421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1102,21 +1098,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/TopRated/show_top_rated.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2317">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/RegistrationController/registration.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#12#28#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/TopRated/show_top_rated.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
