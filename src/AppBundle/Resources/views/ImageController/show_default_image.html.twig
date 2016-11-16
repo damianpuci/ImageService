@@ -4,8 +4,8 @@
 
 {% block body %}
 
-<div id="overlay">
-</div>
+    <div id="overlay">
+    </div>
     <div id="form" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -26,27 +26,29 @@
         <a href ="/logout">Logout</a><br>
     </div>
 
-    <div id="menu">
-            <div align="center"><h1>ImageService</h1></div>
+    {% if error %}
+        <h2>{{ error.messageKey|trans(error.messageData, 'security') }}</h2>
+    {% endif %}
 
-        {% if error %}
-            <h2>{{ error.messageKey|trans(error.messageData, 'security') }}</h2>
-        {% endif %}
-           {% if last_username %}
-                <div align="left">
-                <span id="user" onclick="openNav2()">{{ last_username }}</span><br>
-
-                </div>
+    <div class="top_bar">
+        <div class="item" id="left_menu">
+            {% if last_username %}
+                <a class="button" id="user" onclick="openNav2()">Open user menu</a><br>
             {% endif %}
-            <div align="right">
-                <a href="{{ path('registration') }}">Registration</a><br>
-                {% if last_username == NULL %}
-                    <span id="login" onclick="openNav()">Login</span><br>
-                {% endif %}
+        </div>
 
-                <a href="{{ path('show_top_rated') }}">Top rated</a><br>
-            </div>
+        <div class="item" id="title">- Image Service -</div>
+
+        <div class="item" id="right_menu">
+            <a class="button" href="{{ path('registration') }}">Registration</a><br>
+            {% if last_username == NULL %}
+                <span id="login" onclick="openNav()">Login</span><br>
+            {% endif %}
+            <a class="button" href="{{ path('show_top_rated') }}">Top rated</a><br>
+        </div>
+
     </div>
+
 
     <script>
         function openNav() {
@@ -69,9 +71,8 @@
 
 
     <div id="images">
-
         {% for image in images2 %}
-             <div align="center" ><a href="{{path('display_image', {'id': image.id}) }}"><img src="{{ asset(image.path) }}" width="500" height="300" /></a></div>
+            <div align="center" ><a href="{{path('display_image', {'id': image.id}) }}"><img src="{{ asset(image.path) }}" width="500" height="300" /></a></div>
         {% endfor %}
     </div>
 
@@ -84,7 +85,6 @@
     </div>
 
 
-
 {% endblock %}
 
 
@@ -92,7 +92,6 @@
     <style>
 
         #overlay{
-
             background-color:#555555;
             position:fixed;
             width:100%;
@@ -102,14 +101,54 @@
             z-index: -10;
         }
 
-        #menu{
+        .top_bar {
+            overflow:hidden;
+            margin-bottom:0px;
             background-image: url({{ asset('images/background.png') }});
-            color: lightskyblue;
-            width: 100%;
-            top:0px;
-            left:0px;
-            position: absolute;
+            border-radius: 10px;
         }
+
+        .item {
+            float:left;
+            height:100px;
+            margin:0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #left_menu {
+            width: 10%;
+        }
+
+        #title {
+            display: flex;
+            width: 80%;
+            color: lightskyblue;
+            justify-content: center;
+            align-items: center;
+            font-size: 30pt;
+            font-family: Verdana;
+            font-weight: bold;
+
+        }
+
+        #right_menu {
+            width: 10%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            width: 80%;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+
 
         #login{
             color: lightskyblue;
@@ -129,10 +168,9 @@
             background-image: url({{ asset('images/background.png') }});
             color: lightskyblue;
             text-decoration: none;
-            font-style: italic;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
             position: fixed;
         }
 
@@ -140,18 +178,16 @@
             background-color: #555555;
             width: auto;
             height: auto;
-            margin: 250px auto 0;
+            margin: 10px auto 50px;
         }
 
         #user{
             color: lightskyblue;
-            font-style: italic;
-            margin: 4px;
+            margin: 0px;
             border: 1px solid lightskyblue;
             border-radius: 4px;
             background: #3c3c3a;
             line-height: 30px;
-            transition: 5s;
             padding: 2px;
             text-decoration: none;
             cursor:pointer;
@@ -191,13 +227,11 @@
         h1{
             margin-top: 0px;
             color: lightskyblue;
-            font-style: italic;
             font-size: 300%;
         }
 
         h2{
             color: lightskyblue;
-            font-style: italic;
             display: inline;
             font-size: 17px;
             font-weight: normal;
@@ -206,17 +240,14 @@
         a{
             color: lightskyblue;
             text-decoration: none;
-            font-style: italic;
             display: inline-block;
             width: auto;
-            height: auto;
-            margin: 4px;
             padding: 2px;
             border: 1px solid lightskyblue;
             border-radius: 4px;
             background: #3c3c3a;
-            line-height: 30px;
-            transition: 5s;
+            line-height: 20px;
+            transition: 0.3s;
         }
 
         a:hover{

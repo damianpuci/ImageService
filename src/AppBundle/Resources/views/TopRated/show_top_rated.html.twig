@@ -6,7 +6,7 @@
 
 
     <div id="overlay">
-        <div id="menu">
+       {# <div id="menu">
             <div align="center"><h1>ImageService</h1></div>
             {% if last_username %}
                 <div align="left">
@@ -18,6 +18,27 @@
                 <a href="{{ path('page') }}">Home</a>
             </div>
         </div>
+        #}
+        <div class="top_bar">
+            <div class="item" id="left_menu">
+                {% if last_username %}
+                    <a class="button" id="user" onclick="openNav2()">Open user menu</a><br>
+                {% endif %}
+            </div>
+
+            <div class="item" id="title">- Image Service -</div>
+
+            <div class="item" id="right_menu">
+                <a href="{{ path('page') }}">Home</a><br>
+                {% if last_username == NULL %}
+                    <span id="login" onclick="openNav()">Login</span><br>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
         <div id="images">
 
             {% for image in images %}
@@ -34,6 +55,9 @@
                 <a href="{{ path('add_image') }}">Add image</a>
                 <a href ="/logout">Logout</a><br>
             </div>
+
+
+
 
 
 
@@ -59,9 +83,8 @@
 {% block stylesheets %}
     <style>
         #overlay{
-
             background-color:#555555;
-            position:absolute;
+            position:fixed;
             width:100%;
             height:100%;
             top:0px;
@@ -69,14 +92,53 @@
             z-index: -10;
         }
 
-        #menu{
+        .top_bar {
+            overflow:hidden;
+            margin-bottom:0px;
             background-image: url({{ asset('images/background.png') }});
-            color: lightskyblue;
-            width: 100%;
-            top:0px;
-            left:0px;
-            position: absolute;
+            border-radius: 10px;
         }
+
+        .item {
+            float:left;
+            height:100px;
+            margin:0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #left_menu {
+            width: 10%;
+        }
+
+        #title {
+            display: flex;
+            width: 80%;
+            color: lightskyblue;
+            justify-content: center;
+            align-items: center;
+            font-size: 30pt;
+            font-family: Verdana;
+            font-weight: bold;
+
+        }
+
+        #right_menu {
+            width: 10%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            width: 80%;
+            text-align: center;
+            margin-top: 0px;
+        }
+
 
         #user{
             cursor:pointer;
@@ -99,7 +161,7 @@
             background-color: #555555;
             width: auto;
             height: auto;
-            margin: 250px auto 0;
+
         }
 
         h1{
